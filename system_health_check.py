@@ -121,43 +121,50 @@ def send_email(filename):
         logging.error(f"Error creating email: {e}")
         print(f"\nError sending email: {e}")
 
-while True:
-    print("\n=====SYSTEM HEALTH MENU=====")
-    print("1. Check Disk Usage.")
-    print("2. Check Memory Usage.")
-    print("3. Check CPU Usage.")
-    print("4. Check Running Services.")
-    print("5. Generate Report.")
-    print("6. Exit.")
+if __name__ == "__main__":
+    
+    while True:
+        print("\n=====SYSTEM HEALTH MENU=====")
+        print("1. Check Disk Usage.")
+        print("2. Check Memory Usage.")
+        print("3. Check CPU Usage.")
+        print("4. Check Running Services.")
+        print("5. Generate Report.")
+        print("6. Exit.")
 
-    choice = input("Enter your choice: ")
+        choice = input("Enter your choice: ")
 
-    if choice == "1":
-        print("\n===== DISK USAGE =====")
-        print(check_disk_usage())
+        if choice == "1":
+            print("\n===== DISK USAGE =====")
+            print(check_disk_usage())
 
-    elif choice == "2":
-        print("\n===== MEMORY USAGE =====")
-        print(check_memory_usage())
+        elif choice == "2":
+            print("\n===== MEMORY USAGE =====")
+            print(check_memory_usage())
 
-    elif choice == "3":
-        print("\n===== CPU USAGE =====")
-        print(check_cpu_usage())
+        elif choice == "3":
+            print("\n===== CPU USAGE =====")
+            print(check_cpu_usage())
 
-    elif choice == "4":
-        print("\n===== RUNNING SERVICES =====")
-        print(monitor_running_services())
+        elif choice == "4":
+            print("\n===== RUNNING SERVICES =====")
+            print(monitor_running_services())
 
-    elif choice == "5": 
-        report_file = generate_report()  
-        send_email(report_file)
+        elif choice == "5": 
+            report_file = generate_report()  
+            send_email(report_file)
 
-    elif choice == "6":
-        print("Exiting System Health Monitor.")
-        break  
+        elif choice == "6":
+            print("Exiting System Health Monitor.")
+            break  
 
-    else:
-        print("Invalid choice. Please try again.")  
+        else:
+            print("Invalid choice. Please try again.")  
+
+                
+
+            
+
 
               
 
